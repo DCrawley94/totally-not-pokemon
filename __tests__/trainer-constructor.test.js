@@ -1,5 +1,5 @@
-const Trainer = require('./trainer-constructor');
-const Pokemon = require('./pokemon-constructor');
+const Trainer = require('../constructors/trainer-constructor');
+const Pokemon = require('../constructors/pokemon-constructors');
 
 describe('Trainer', () => {
   it('returns a new trainer with a name property', () => {
