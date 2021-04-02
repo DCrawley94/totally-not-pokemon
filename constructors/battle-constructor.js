@@ -4,7 +4,7 @@ class Battle {
     this.trainer2 = trainer2;
     this.pokemon1 = pokemon1;
     this.pokemon2 = pokemon2;
-    this.turn = 1;
+    this.turn = true;
     this.fightIsOngoing = true;
 
     if (this.pokemon1.strength === this.pokemon2.type) {
@@ -17,7 +17,6 @@ class Battle {
   }
 
   fight() {
-    this.turn++;
     let attacker = this.pokemon1;
     let defender = this.pokemon2;
 
@@ -30,7 +29,8 @@ class Battle {
     }
 
     if (this.fightIsOngoing) {
-      if (this.turn % 2 === 1) {
+      this.turn = !this.turn;
+      if (this.turn) {
         attacker = this.pokemon2;
         defender = this.pokemon1;
         defender.hitPoints -= attacker.attackDamage;
@@ -41,12 +41,20 @@ class Battle {
       }
 
       if (attacker.strength === defender.type) {
-        return `${attacker.name} used ${attacker.move} for ${attacker.attackDamage} damage, it was super effective`;
+        console.log(
+          `${attacker.name} used ${attacker.move} for ${attacker.attackDamage} damage, it was super effective`
+        );
       } else if (defender.strength === attacker.type) {
-        return `${attacker.name} used ${attacker.move} for ${attacker.attackDamage} damage, it wasn't very effective`;
+        console.log(
+          `${attacker.name} used ${attacker.move} for ${attacker.attackDamage} damage, it wasn't very effective`
+        );
       } else {
-        return `${attacker.name} used ${attacker.move}for ${attacker.attackDamage} damage`;
+        console.log(
+          `${attacker.name} used ${attacker.move} for ${attacker.attackDamage} damage`
+        );
       }
+
+      return this.fight();
     } else {
       return 'Battle is over';
     }

@@ -1,9 +1,8 @@
 const inquirer = require('inquirer');
-const { starter, Rival } = require('../game-resources');
+const { starters, Rival } = require('./game-resources');
 const Trainer = require('../constructors/trainer-constructor');
 const Pokemon = require('../constructors/pokemon-constructors');
-const Forest_Encounter = require('../constructors/wild-pokemon-encounter');
-const areas = require('../areas');
+
 
 const questionOne = {
   type: 'input',

@@ -1,4 +1,4 @@
-const Pokemon = require('./pokemon-constructor');
+const Pokemon = require('../constructors/pokemon-constructors');
 
 describe('Pokemon', () => {
   it('it creates a new pokemon with a name property', () => {
@@ -10,12 +10,12 @@ describe('Pokemon', () => {
 
   it('creates a new pokemon with hit points', () => {
     const firstPokemon = new Pokemon('Picachu', 10);
-    expect(firstPokemon.hitPoints).toBe(10);
+    expect(firstPokemon.hitPoints).toBe(100);
   });
 
   it('creates a new pokemon with attack damage', () => {
     const firstPokemon = new Pokemon('Picachu', 10, 2);
-    expect(firstPokemon.attackDamage).toBe(2);
+    expect(firstPokemon.attackDamage).toBe(10);
   });
 
   it('creates a new pokemon with a sound', () => {

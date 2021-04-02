@@ -11,38 +11,9 @@ const choices = {
   palletTown: {
     text:
       'You stand in your hometown ready for an adventure what do you want to do first?',
-    choice1: 'Search for wild Pokemon!',
+    choice1: 'Go back to bed...',
     choice2: 'Continue on you adventure!',
-    nextChoice: [whichStarterArea, gloomyForest],
-  },
-  whichStarterArea: {
-    text:
-      'Oak said that there are three main areas nearby which contain wild Pokemon. Where do you want to look?',
-    choice1: 'Search the nearby woods',
-    choice2: 'Head over to the lake',
-    choice3: 'Explore the small cavern',
-    nextChoice: [woods0, lake0, cavern0],
-  },
-  woods0: {
-    text:
-      'You step into the woods, the air is filled with the sounds of wild pokemon',
-    choice1: 'Search for wild Pokemon',
-    choice2: 'Return to Pallet Town',
-    nextChoice: [woodsEncounter, palletTown],
-  },
-  lake0: {
-    text:
-      'The sunlight is reflected in the surface of the water as you approach, you can seeing pokemon splashing in the water by the shore.',
-    choice1: 'Search for wild Pokemon',
-    choice2: 'Return to Pallet Town',
-    nextChoice: [lakeEncounter, palletTown],
-  },
-  cavern0: {
-    text:
-      'You step into the dark cavern, as your eyesight adjusts you see an abundance of wild Pokemon',
-    choice1: 'Search for wild Pokemon',
-    choice2: 'Return to Pallet Town',
-    nextChoice: [cavernEncounter, palletTown],
+    nextChoice: [boringEnding, gloomyForest],
   },
   gloomyForest: {
     text:
@@ -50,5 +21,21 @@ const choices = {
     choice1: 'Bring it on!',
     choice2: "I'm not ready for this",
     nextChoice: [rivalEncounter, palletTown],
+  },
+
+  gloomyForestPt2: {
+    text:
+      'You have achieved victory over your rival, until next time anyway. Proceed towards the next town?',
+    choice1: 'I think I can see a wild Pokemon over there...',
+    choice2: 'If we hurry up we can get there before dark!',
+    nextChoice: [forestEncounter, gloomyForestPt3],
+  },
+
+  gloomyForestPt3: {
+    text:
+      'As you continue on the path you come across another Trainer who looks very anxious... /n /n They have lost their Rattata somewhere in the trees, will you help with the search? ',
+    choice1: 'Of course I will!',
+    choice2: "I can't delay, I need to make it to the next town!",
+    nextChoice: [makeAFriend, nextTown],
   },
 };

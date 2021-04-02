@@ -24,8 +24,8 @@ exports.areas = {
       decription:
         '<p>You have made it to Viridian city, the size of the city is almost overwhelming</p>',
       actions: {
-        visitShop: 'shop0', //this is gonna be a variable,
-        visitGym: 'gym0', //and this,
+        visitShop: 'shop0',
+        visitGym: 'gym0',
         travel: {
           east: 'mountains.mountain0',
           south: 'forests.forest1',

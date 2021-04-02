@@ -1,6 +1,6 @@
 const Pokemon = require('../constructors/pokemon-constructors');
 const Trainer = require('../constructors/trainer-constructor');
-const Forest_Encounter = require('../constructors/wild-pokemon-encounter');
+const { Forest_Encounter } = require('../constructors/wild-pokemon-encounter');
 
 describe('Forest_Encounter', () => {
   it('should return an object with pokemonSelction, trainer and wildPokemon propertys', () => {

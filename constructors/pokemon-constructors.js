@@ -1,8 +1,8 @@
 class Pokemon {
   constructor(name, sound, move, type) {
     this.name = name;
-    this.hitPoints = 10;
-    this.attackDamage = 2;
+    this.hitPoints = 100;
+    this.attackDamage = 10;
     this.sound = sound;
     this.move = move;
 

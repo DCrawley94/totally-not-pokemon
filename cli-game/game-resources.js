@@ -1,5 +1,5 @@
-const Pokemon = require('./constructors/pokemon-constructors');
-const Trainer = require('./constructors/trainer-constructor');
+const Pokemon = require('../constructors/pokemon-constructors');
+const Trainer = require('../constructors/trainer-constructor');
 
 const Bulbasaur = new Pokemon('Bulbasaur', 'bulba bulba', 'Vine Whip', 'grass');
 const Squirtle = new Pokemon('Squirtle', 'squir squir', 'Bubble', 'water');
