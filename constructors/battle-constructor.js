@@ -17,15 +17,20 @@ class Battle {
   }
 
   fight() {
+
     let attacker = this.pokemon1;
     let defender = this.pokemon2;
 
     if (this.pokemon1.hitPoints <= 0) {
       this.fightIsOngoing = false;
       console.log(`${this.trainer2.name} wins!`);
+      this.pokemon1.hitPoints = 100;
+      this.pokemon2.hitPoints = 100;
     } else if (this.pokemon2.hitPoints <= 0) {
       this.fightIsOngoing = false;
       console.log(`${this.trainer1.name} wins!`);
+      this.pokemon1.hitPoints = 100;
+      this.pokemon2.hitPoints = 100;
     }
 
     if (this.fightIsOngoing) {

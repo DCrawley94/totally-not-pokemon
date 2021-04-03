@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const { starters, Rival } = require('./game-resources');
 const Trainer = require('../constructors/trainer-constructor');
-const Pokemon = require('../constructors/pokemon-constructors');
 const Battle = require('../constructors/battle-constructor');
 
 let player;
