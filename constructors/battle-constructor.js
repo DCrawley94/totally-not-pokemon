@@ -22,10 +22,10 @@ class Battle {
 
     if (this.pokemon1.hitPoints <= 0) {
       this.fightIsOngoing = false;
-      return `${this.pokemon2.name} wins!`;
+      console.log(`${this.pokemon2.name} wins!`);
     } else if (this.pokemon2.hitPoints <= 0) {
       this.fightIsOngoing = false;
-      return `${this.pokemon1.name} wins!`;
+      console.log(`${this.pokemon1.name} wins!`);
     }
 
     if (this.fightIsOngoing) {
