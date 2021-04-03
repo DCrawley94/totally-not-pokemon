@@ -4,9 +4,18 @@ const Trainer = require('../constructors/trainer-constructor');
 const Bulbasaur = new Pokemon('Bulbasaur', 'bulba bulba', 'Vine Whip', 'grass');
 const Squirtle = new Pokemon('Squirtle', 'squir squir', 'Bubble', 'water');
 const Charmander = new Pokemon('Charmander', 'char char', 'Ember', 'fire');
-const starters = [Bulbasaur, Squirtle, Charmander];
+const starters = {
+  Bulbasaur: Bulbasaur,
+  Squirtle: Squirtle,
+  Charmander: Charmander
+};
+const randomStarter = (starters) => {
+  const keys = Object.keys(starters);
+  return starters[keys[(keys.length * Math.random()) << 0]];
+  //bitwise operator was recommended to me
+};
 
 const Rival = new Trainer('Rival');
-Rival.catch(starters[[Math.floor(Math.random() * 2)]]);
+Rival.catch(randomStarter(starters));
 
 module.exports = { starters, Rival };
