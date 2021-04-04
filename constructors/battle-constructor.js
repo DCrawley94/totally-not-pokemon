@@ -29,10 +29,12 @@ class Battle {
       this.fightIsOngoing = false;
       console.log(`${this.trainer2.name} wins!`);
       this.battleReset();
+      console.log(this.pokemon2.sound);
     } else if (this.pokemon2.hitPoints <= 0) {
       this.fightIsOngoing = false;
       console.log(`${this.trainer1.name} wins!`);
       this.battleReset();
+      console.log(this.pokemon1.sound);
     }
 
     if (this.fightIsOngoing) {

@@ -16,6 +16,5 @@ const randomStarter = (starters) => {
 };
 
 const Rival = new Trainer('Rival');
-Rival.catch(randomStarter(starters));
 
 module.exports = { starters, Rival, randomStarter };

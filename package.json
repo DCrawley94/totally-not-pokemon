@@ -1,17 +1,18 @@
 {
   "name": "totally-not-pokemon",
   "version": "1.0.0",
-  "description": "",
+  "description": "A pokemon CLI game and soon to be text-based browser game",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "game": "node cli-game/pokemon-game-inquirer.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DCrawley94/totally-not-pokemon.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Duncan Crawley",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DCrawley94/totally-not-pokemon/issues"
@@ -19,7 +20,13 @@
   "homepage": "https://github.com/DCrawley94/totally-not-pokemon#readme",
   "dependencies": {
     "inquirer": "^8.0.0",
-    "jest": "^26.6.3",
     "jquery": "^3.6.0"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3"
+  },
+  "engines": {
+    "npm": ">=7.6.3",
+    "node": ">=15.6.0"
   }
 }
