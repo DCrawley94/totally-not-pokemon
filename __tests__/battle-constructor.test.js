@@ -38,16 +38,26 @@ describe('Battle', () => {
       expect(consoleSpy).toHaveBeenCalledWith('Nick wins!');
       expect(consoleSpy).toHaveBeenCalledTimes(16);
     });
-
-    test('pokemon hitpoints should be restored to 100 after each battle ', () => {
-      const pokemon1 = new Pokemon('Pikachu');
-      const pokemon2 = new Pokemon('Charmanda');
-      expect(pokemon1.hitPoints).toBe(100);
-      expect(pokemon2.hitPoints).toBe(100);
-      const battle = new Battle('A', 'B', pokemon1, pokemon2);
-      battle.fight();
-      expect(pokemon1.hitPoints).toBe(100);
-      expect(pokemon2.hitPoints).toBe(100);
+    describe('Name of the group', () => {
+      test('pokemon hitpoints should be restored to 100 after each battle ', () => {
+        const pokemon1 = new Pokemon('Pikachu');
+        const pokemon2 = new Pokemon('Charmanda');
+        expect(pokemon1.hitPoints).toBe(100);
+        expect(pokemon2.hitPoints).toBe(100);
+        const battle = new Battle('A', 'B', pokemon1, pokemon2);
+        battle.fight();
+        expect(pokemon1.hitPoints).toBe(100);
+        expect(pokemon2.hitPoints).toBe(100);
+      });
+      test('pokemon attack damage should be restored to 10 after each battle', () => {
+        const pokemon1 = new Pokemon('Pikachu');
+        const pokemon2 = new Pokemon('Charmanda');
+        expect(pokemon1.attackDamage).toBe(10);
+        expect(pokemon2.attackDamage).toBe(10);
+        const battle = new Battle('A', 'B', pokemon1, pokemon2);
+        expect(pokemon1.attackDamage).toBe(10);
+        expect(pokemon2.attackDamage).toBe(10);
+      });
     });
   });
 });

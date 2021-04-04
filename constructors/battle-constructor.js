@@ -15,22 +15,24 @@ class Battle {
       this.pokemon2.attackDamage *= 1.25;
     }
   }
-
+  battleReset() {
+    this.pokemon1.hitPoints = 100;
+    this.pokemon1.attackDamage = 10;
+    this.pokemon2.hitPoints = 100;
+    this.pokemon2.attackDamage = 10;
+  }
   fight() {
-
     let attacker = this.pokemon1;
     let defender = this.pokemon2;
 
     if (this.pokemon1.hitPoints <= 0) {
       this.fightIsOngoing = false;
       console.log(`${this.trainer2.name} wins!`);
-      this.pokemon1.hitPoints = 100;
-      this.pokemon2.hitPoints = 100;
+      this.battleReset();
     } else if (this.pokemon2.hitPoints <= 0) {
       this.fightIsOngoing = false;
       console.log(`${this.trainer1.name} wins!`);
-      this.pokemon1.hitPoints = 100;
-      this.pokemon2.hitPoints = 100;
+      this.battleReset();
     }
 
     if (this.fightIsOngoing) {
