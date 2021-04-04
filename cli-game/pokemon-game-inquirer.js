@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-const { starters, Rival } = require('./game-resources');
+const { starters, Rival, randomStarter } = require('./game-resources');
 const Trainer = require('../constructors/trainer-constructor');
 const Battle = require('../constructors/battle-constructor');
 
@@ -39,8 +39,14 @@ const game = () => {
     .then((answers) => {
       player = new Trainer(answers.name);
       playerPokemon = starters[answers.pokemon];
-      player.catch(playerPokemon);
-      battle = new Battle(player, Rival, player.bag[0], Rival.bag[0]);
+
+      battle = new Battle(
+        player,
+        Rival,
+        playerPokemon,
+        randomStarter(starters)
+      );
+
       if (answers.battle) {
         battle.fight();
       } else {
