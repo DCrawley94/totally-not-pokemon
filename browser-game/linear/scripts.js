@@ -9,7 +9,7 @@ $(function () {
       id: 0,
       text:
         'You are ready to start your pokemon adventure. In front of you is Professor Oak and the only Pokemon he has left for you is a slightly grumpy Pikachu',
-      choiceArray: [{ target: 'pt', text: 'Are you ready for your adventure?' }]
+      choices: [{ target: 1, text: 'Are you ready for your adventure?' }]
       //mp3: '<source src="./music/Intro.mp3" type="audio/mpeg">',
     },
     {
@@ -18,7 +18,7 @@ $(function () {
         'You stand in your hometown ready for an adventure what do you want to do first?',
       choices: [
         // { target: 'Boring Ending Placeholder', text: 'Go back to bed...' },
-        { target: 'gf1', text: 'Continue on you adventure!' }
+        { target: 2, text: 'Continue on you adventure!' }
       ]
     },
     {
@@ -26,13 +26,13 @@ $(function () {
       text:
         'As you move through the forest towards the next town you spot your rival on the path ahead. He challenges you to a battle!',
       choices: [
-        { target: 'gf2', text: 'Bring it on!' },
-        { target: 'pt', text: "I'm not ready for this" }
+        { target: 3, text: 'Bring it on!' },
+        { target: 1, text: "I'm not ready for this" }
       ]
     },
 
     {
-      id: 2,
+      id: 3,
       text:
         'You have achieved victory over your rival, until next time anyway. Proceed towards the next town?',
       choices: [
@@ -40,11 +40,11 @@ $(function () {
         //   target: 'forestEncounter placeholder',
         //   text: 'I think I can see a wild Pokemon over there...'
         // },
-        { target: 'gf3', text: 'If we hurry up we can get there before dark!' }
+        { target: 4, text: 'If we hurry up we can get there before dark!' }
       ]
     },
     {
-      id: 3,
+      id: 4,
       text:
         'As you continue on the path you come across another Trainer who looks very anxious... /n /n They have lost their Rattata somewhere in the trees, will you help with the search? ',
       choices: [
@@ -59,11 +59,9 @@ $(function () {
 
   //takes the choice object and returns buttons
   function getChoiceHTML(choices) {
-    return choices
-      .map((choice) => {
-        return `<button class="choice-btn" data-target='${choice.target}'> ${choice.text} </button>`;
-      })
-      .concat();
+    return choices.map((choice) => {
+      return `<button class="choice-btn" data-target='${choice.target}'> ${choice.text} </button>`;
+    });
   }
 
   //Takes story object and returns paragraph elements with story text
@@ -73,7 +71,7 @@ $(function () {
 
   //checks if story has reach the end
   function checkIsEnded(story) {
-    if (story.paths) {
+    if (story.choices) {
       return false;
     }
     return true;
